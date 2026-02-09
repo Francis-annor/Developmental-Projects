@@ -2,11 +2,19 @@
 Fast, Unopinionated, Web Framework for Node.js
 
 ## INSTALLATION
-To install **Express**.
+To install **Express** and use it effectively, follow these steps;
 1. Install **NodeJS** from the the official NodeJS website **https://nodejs.org**.
 2. Create a **Project Folder** on your computer and open it with your **IDE or Text Editor** (e.g., VScode,   Sublime, Jupiter, IntelliJ, Atom, etc.).
 3. Open the **Terminal** in your **IDE or Text Editor**.
-4. Type **npm install express** in the Terminal to install Express.
+
+## CREATING PACKAGE.JSON
+4. Type **npm init** in the Terminal to create **package.json** file for your application.
+
+This process will prompt you to enter things like your project name, version, description, etc.
+
+Alternatively, you can rather use **npm init** to avoid the prompt. the will automatically set the **package.json** for you.
+
+5. Type **npm install express** in the Terminal to install Express.
 
 DONE!
 
