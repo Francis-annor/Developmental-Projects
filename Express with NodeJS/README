@@ -1,7 +1,7 @@
-EXPRESS
+## EXPRESS
 Fast, Unopinionated, Web Framework for Node.js
 
-INSTALLATION
+## INSTALLATION
 To install **Express**.
 1. Install **NodeJS** from the the official NodeJS website **https://nodejs.org**.
 2. Create a **Project Folder** on your computer and open it with your **IDE or Text Editor** (e.g., VScode,   Sublime, Jupiter, IntelliJ, Atom, etc.).
