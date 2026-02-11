@@ -12,12 +12,12 @@ To install **Express** and use it effectively, follow these steps;
 
 This process will prompt you to enter things like your project name, version, description, etc.
 
-Alternatively, you can rather use **npm init** to avoid the prompt. the will automatically set the **package.json** for you.
+Alternatively, you can rather use **npm init -y** to avoid the prompt. the will automatically set the **package.json** for you.
 
-5. Type **npm install express** in the Terminal to install Express.
+5. Type **npm install express** in the Terminal to install Express permanently(it will be added to your dependencies). Or type **npm install express --no-save** to install it temporarily.
 
-DONE!
+## DONE!
 
-You have successfully installed Express with NodeJS.
+## You have successfully installed Express with NodeJS.
 
-Happy Coding!
+## Happy Coding!
