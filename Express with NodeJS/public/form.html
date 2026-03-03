@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CRUD Operation to manage messages">
+    <title>Messaging Platform</title>
+
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    
+    <!-- Message Form -->
+    <form>
+        <div>
+            <label for="fullname">Full Name:</label>
+            <input type="text" name="fullname" id="fullname">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="tel">Telephone:</label>
+            <input type="tel" name="tel" id="tel">
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Send" onclick="sendMessage()">
+        </div>
+    </form>
+
+    <!-- Messaging Table -->
+     <table></table>
+
+     <script src="form.js" async defer></script>
+</body>
+</html>
