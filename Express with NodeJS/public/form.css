@@ -1,0 +1,62 @@
+*{
+    color: white;
+}
+
+body{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+form, table{
+    margin: 50px;
+    padding: 25px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    row-gap: 15px;
+    box-shadow: -7px 7px 10px white;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    color: black;
+}
+/* input[type="submit"]{
+    color: black;
+} */
+textarea{
+    width: 300px;
+    border-radius: 10px;
+    color: black;
+}
+button{
+    padding: 10px;
+    color: black;
+    border: 5px solid white;
+    border-radius: 15px;
+
+    &:hover{
+        color: white;
+        font-size: 15px;
+        transition: all 0.5s;
+    }
+}
+
+#update{
+    background-color: goldenrod;
+}
+
+#delete{
+    background-color: red;
+}
