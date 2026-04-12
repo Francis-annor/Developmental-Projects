@@ -21,3 +21,5 @@ users.map(user => alert("Id: " + user.id + " Name: " + user.name + " Age: " + us
 // currentValue: Represent the current data, value, or item in the loop.
 // index(optional): Represent the current index, or position of the currentValue in the array.
 // array(optional): Represent the whole array itself, which returns or show a new array, and does not modify the original array.
+
+users.map((user, index, arra) => alert(user +" "+ index +" "+ arra));
