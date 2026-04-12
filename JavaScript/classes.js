@@ -23,9 +23,12 @@ class Model extends Car{
     }
 }
 
+// Objects Of The Classes
 const myCar = new Car("Ford");
+const myModel = new Model("Ford", "Mustang");
+
+//Instances Of The Objects
 myCar.name;
 myCar.present();
 
-const myModel = new Model("Ford", "Mustang");
 myModel.show();
