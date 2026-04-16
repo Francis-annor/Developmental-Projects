@@ -3,22 +3,32 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import JesLordLogo from '../public/logo.png'
+import JesLordBadge from '../public/badge.png'
 import { name, age } from './personal.js'
 
-// importing default export module. Note: When importing a default exort module you don't need curly braces
-import message from './message.js'
-
+// importing default export module. Note: When importing a default export module you don't need curly braces
+import Message from './message'
 
 // CSS import module
 import './App.css'
 
+// Setting the width and height values for the image's width and height attributes
+const imgWidth = 100;
+const imgHeight = 100;
 
+// Function Declaration
 function App() {
   return (
     <div>
+      <nav>
+        {/* Setting the src, width, and the height of an image */}
+        <img src={ JesLordLogo } height={imgHeight} width={imgWidth} />
+        <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
+      </nav>
       <h1>Hello World!</h1>
       <Introduction />
-      <message />
+      <Message />
     </div>
   )
 }
