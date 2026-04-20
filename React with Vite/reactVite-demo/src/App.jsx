@@ -1,10 +1,12 @@
 // Import Modules
 import { useState } from 'react'
+// createRoot lets you create a root to display React components inside a browser DOM node.
+import { createRoot } from 'react-dom/client'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import JesLordLogo from '../public/logo.png'
-import JesLordBadge from '../public/badge.png'
+import JesLordLogo from '/logo.png'
+import JesLordBadge from '/badge.png'
 import { name, age } from './personal.js'
 
 // importing default export module. Note: When importing a default export module you don't need curly braces
@@ -17,13 +19,54 @@ import './App.css'
 const imgWidth = 100;
 const imgHeight = 100;
 
+const navBar = (
+  <nav>
+    <img src={ JesLordLogo } height={imgHeight} width={imgWidth} />
+  </nav>
+)
+
+const sideBar = (
+  <div>Side Bar</div>
+)
+
+const footer = (
+  <footer>#&copy; 2026</footer>
+)
+
+const myTable = (
+  <div>
+    <table>
+      <tr>
+        <th>Names</th>
+      </tr>
+      <tr>
+        <td>John</td>
+      </tr>
+      <tr>
+        <td>Elsa</td>
+      </tr>
+    </table>
+  </div>
+);
+
+const Time = () =>{
+  const time = new Date();
+  const Hour = time.getHours();
+  const Minute = time.getMinutes();
+  const Second = time.getSeconds();
+  const Millisecond = time.getMilliseconds();
+  return (
+  <p>{Hour}h : {Minute}m : {Second}s : {Millisecond}ms</p>
+  )
+}
+
 // Function Declaration
 function App() {
   return (
     <div>
+      <navBar />
       <nav>
-        {/* Setting the src, width, and the height of an image */}
-        <img src={ JesLordLogo } height={imgHeight} width={imgWidth} />
+        <Time />
         <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
       </nav>
       <h1>Hello World!</h1>
@@ -32,20 +75,6 @@ function App() {
     </div>
   )
 }
-
-// const myTable = (
-//     <table>
-//       <tr>
-//         <th>Names</th>
-//       </tr>
-//       <tr>
-//         <td>John</td>
-//       </tr>
-//       <tr>
-//         <td>Elsa</td>
-//       </tr>
-//     </table>
-//   );
 
 // Detructuring In React Components
 // Props Destructuring with function declaration
@@ -59,11 +88,11 @@ function Introduction(){
 // We use destructuring to extract the values in a useState Hook
 function Counter(){
   // Destructuring useState() Hook
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(1);
   
   return (
     // Setting an onclick count for the button using useState
-    <button onClick={()=> setCount(count + 5)} className='counter'>
+    <button onClick={()=> setCount(count + 2)} className='counter'>
       Count: {count}
     </button>
   )
@@ -100,5 +129,5 @@ export function UserList(){
   )
 }
 
-// Multi Export Modules. It can also be used for Single Export Module
+// Multi Name Export Modules. It can also be used for Single Export Module
 export {App, Counter, MyFruits}

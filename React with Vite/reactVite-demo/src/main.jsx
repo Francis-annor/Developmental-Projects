@@ -10,8 +10,6 @@ createRoot(root).render(
   // Rendering imported modules using render() method
   <>
     <App />
- 
-    <myTable />
     <MyFruits />
     <UserList />
     <Counter />
