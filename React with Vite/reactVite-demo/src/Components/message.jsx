@@ -1,5 +1,5 @@
 // import modules
-import { name, age, message } from './personal.js'
+import { name, age, message } from '../personal.js'
 
 // Function Expression (Anonymous)
 const Message = () => {
