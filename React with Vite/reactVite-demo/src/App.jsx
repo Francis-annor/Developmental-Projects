@@ -7,10 +7,10 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import JesLordLogo from '/logo.png'
 import JesLordBadge from '/badge.png'
-import { name, age } from './personal.js'
+import { name, age } from './Components/personal.js'
 
 // importing default export module. Note: When importing a default export module you don't need curly braces
-import Message from './message'
+import Message from './Components/message.jsx'
 
 // CSS import module
 import './App.css'
