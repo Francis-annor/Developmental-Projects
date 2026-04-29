@@ -10,6 +10,7 @@ import { name, age } from './Components/personal.js'
 import Message from './Components/message.jsx'
 import Keyboard from './Components/Keyboard.jsx'
 import Submit from './Components/MyButtons.jsx'
+import {Goal, Loading, Auth } from './Components/Authentication.jsx'
 
 // CSS import module
 import './App.css'
@@ -71,6 +72,9 @@ function App() {
       <Introduction />
       <Message />
       <Submit />
+      <Goal isGoal={false}/>
+      <Loading loaded={'Yes'} />
+      <Auth isLogin={true} />
     </div>
   )
 }
