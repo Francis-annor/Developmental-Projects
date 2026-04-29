@@ -4,9 +4,10 @@ import { useState } from 'react'
 // import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
 import JesLordBadge from '/badge.png'
-import { name, age } from './Components/personal.js'
 
 // importing default export module. Note: When importing a default export module you don't need curly braces
+import { name, age } from './Components/personal.js'
+import Forms from './Components/Forms.jsx'
 import Message from './Components/message.jsx'
 import Keyboard from './Components/Keyboard.jsx'
 import Submit from './Components/MyButtons.jsx'
@@ -75,6 +76,8 @@ function App() {
       <Goal isGoal={false}/>
       <Loading loaded={'Yes'} />
       <Auth isLogin={true} />
+      <h1>Forms</h1>
+      <Forms />
     </div>
   )
 }
