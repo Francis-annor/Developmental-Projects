@@ -9,6 +9,7 @@ import { name, age } from './Components/personal.js'
 // importing default export module. Note: When importing a default export module you don't need curly braces
 import Message from './Components/message.jsx'
 import Keyboard from './Components/Keyboard.jsx'
+import Submit from './Components/MyButtons.jsx'
 
 // CSS import module
 import './App.css'
@@ -69,6 +70,7 @@ function App() {
       <h1>Hello World!</h1>
       <Introduction />
       <Message />
+      <Submit />
     </div>
   )
 }
