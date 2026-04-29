@@ -1,16 +1,14 @@
 // Import Modules
 import { useState } from 'react'
 // createRoot lets you create a root to display React components inside a browser DOM node.
-import { createRoot } from 'react-dom/client'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+// import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
 import JesLordBadge from '/badge.png'
 import { name, age } from './Components/personal.js'
 
 // importing default export module. Note: When importing a default export module you don't need curly braces
 import Message from './Components/message.jsx'
+import Keyboard from './Components/Keyboard.jsx'
 
 // CSS import module
 import './App.css'
@@ -19,35 +17,35 @@ import './App.css'
 const imgWidth = 100;
 const imgHeight = 100;
 
-const navBar = (
-  <nav>
-    <img src={ JesLordLogo } height={imgHeight} width={imgWidth} />
-  </nav>
-)
+// const navBar = (
+//   <nav>
+//     <img src={ JesLordLogo } height={imgHeight} width={imgWidth} />
+//   </nav>
+// )
 
-const sideBar = (
-  <div>Side Bar</div>
-)
+// const sideBar = (
+//   <div>Side Bar</div>
+// )
 
-const footer = (
-  <footer>#&copy; 2026</footer>
-)
+// const footer = (
+//   <footer>#&copy; 2026</footer>
+// )
 
-const myTable = (
-  <div>
-    <table>
-      <tr>
-        <th>Names</th>
-      </tr>
-      <tr>
-        <td>John</td>
-      </tr>
-      <tr>
-        <td>Elsa</td>
-      </tr>
-    </table>
-  </div>
-);
+// const myTable = (
+//   <div>
+//     <table>
+//       <tr>
+//         <th>Names</th>
+//       </tr>
+//       <tr>
+//         <td>John</td>
+//       </tr>
+//       <tr>
+//         <td>Elsa</td>
+//       </tr>
+//     </table>
+//   </div>
+// );
 
 const Time = () =>{
   const time = new Date();
@@ -64,7 +62,6 @@ const Time = () =>{
 function App() {
   return (
     <div>
-      <navBar />
       <nav>
         <Time />
         <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
