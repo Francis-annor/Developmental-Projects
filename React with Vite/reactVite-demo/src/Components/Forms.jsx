@@ -13,13 +13,17 @@ function Login(){
     // Controlling Components
     // Handling Multiple Form Inputs
     const [inputs, setInputs] = useState({
-        fullname: 'Mr. '
+        fullname: 'Mr. ',
+        favRiceBall: true,
+        gender: ''
     });
+    // const [gender, setGender] = useState('');
 
     // Handling Multiple Form Inputs
     const handleChange = (e) => {
         const name = e.target.name;
-        const value = e.target.value;
+        const target = e.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
         setInputs(values => ({...values, [name]:value}));
     }
 
@@ -31,7 +35,7 @@ function Login(){
 
     return (
     // Handling Form Submit and preventing Default
-        <form onSubmit={ (e) => {e.preventDefault()} }>
+        <form onSubmit={ (e) => {e.preventDefault(); alert(inputs.gender)} }>
             <h3>Login</h3>
             <label>Enter your name: 
                 <input 
@@ -41,6 +45,24 @@ function Login(){
                 onChange={ handleChange } />
             </label>
             <p>Name: { inputs.fullname }</p>
+            <p>Gender:</p>
+            <label>
+                <input 
+                type="radio" 
+                name="gender" 
+                value="Male" 
+                checked={ inputs.gender === 'Male' } 
+                onChange={ handleChange } /> Male
+            </label>
+            <label>
+                <input 
+                type="radio" 
+                name="gender" 
+                value="Female" 
+                checked={ inputs.gender === 'Female' } 
+                onChange={ handleChange } /> Female
+            </label>
+            <br />
             <label>Marital Status: 
                 <select 
                 name="maritalStatus"
@@ -51,6 +73,43 @@ function Login(){
                     <option value='Widow'>Widow</option>
                     <option value='Separated'>Separated</option>
                 </select>
+            </label>
+            <br />
+            <p>Favourite Foods</p>
+            <label>
+                <input 
+                type="checkbox"
+                name="favRiceBall" 
+                checked={ inputs.favRiceBall } 
+                onChange={ handleChange } /> Rice Ball
+            </label>
+            <label>
+                <input 
+                type="checkbox" 
+                name="favBanku" 
+                checked={ inputs.favBanku } 
+                onChange={ handleChange } /> Banku & Okro Stew
+            </label>
+            <label>
+                <input 
+                type="checkbox" 
+                name="favJollog" 
+                checked={ inputs.favJollof } 
+                onChange={ handleChange } /> Jollof Rice
+            </label>
+            <label>
+                <input 
+                type="checkbox" 
+                name="favFufu" 
+                checked={ inputs.favFufu } 
+                onChange={ handleChange } /> Fufu
+            </label>
+            <label>
+                <input 
+                type="checkbox" 
+                name="favFriedRice" 
+                checked={ inputs.favFriedRice } 
+                onChange={ handleChange } /> Fried Rice
             </label>
             <br />
             <label>Write here: 
