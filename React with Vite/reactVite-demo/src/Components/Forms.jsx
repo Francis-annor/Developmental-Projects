@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { createPortal } from "react-dom"
 
 function Forms(){
     return (
@@ -17,7 +18,6 @@ function Login(){
         favRiceBall: true,
         gender: ''
     });
-    // const [gender, setGender] = useState('');
 
     // Handling Multiple Form Inputs
     const handleChange = (e) => {
@@ -33,7 +33,11 @@ function Login(){
     //     alert(name);
     // }
 
-    return (
+    // Portal Syntax: createPortal(children, domNode);
+    // children: is any renderable React content, like elements, strings, or fragments
+    // domNode: is a DOM element where the portal should be inserted instead.
+    // Creating a Portal for the login form using createPortal
+    return createPortal(
     // Handling Form Submit and preventing Default
         <form onSubmit={ (e) => {e.preventDefault(); alert(inputs.gender)} }>
             <h3>Login</h3>
@@ -120,9 +124,10 @@ function Login(){
             </label>
             <pre>Message: { inputs.message }</pre>
             <input type='submit' />
-        </form>
+        </form>,
 
-    )
+        document.body
+    );
 }
 
 export default Forms
