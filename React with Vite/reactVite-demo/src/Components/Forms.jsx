@@ -10,14 +10,18 @@ function Forms(){
 
 // React Forms
 function Login(){
-    const [name, setName] = useState("Mr. ");
-    const [message, setMessage] = useState("");
-    const [selected, setOption] = useState("Divorced");
-
     // Controlling Components
-    // const handleChange = (e) => {
-    //     setName(e.target.value);
-    // }
+    // Handling Multiple Form Inputs
+    const [inputs, setInputs] = useState({
+        fullname: 'Mr. '
+    });
+
+    // Handling Multiple Form Inputs
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setInputs(values => ({...values, [name]:value}));
+    }
 
     // Handling Form Submit and preventing Default
     // const handleSubmit = (e) => {
@@ -27,16 +31,21 @@ function Login(){
 
     return (
     // Handling Form Submit and preventing Default
-        <form onSubmit={ (e) => {e.preventDefault(); alert(name +' '+ message)} }>
+        <form onSubmit={ (e) => {e.preventDefault()} }>
             <h3>Login</h3>
             <label>Enter your name: 
-                <input type='text' value={ name } onChange={ (e) => setName(e.target.value) } />
+                <input 
+                type='text' 
+                name="fullname"
+                value={ inputs.fullname } 
+                onChange={ handleChange } />
             </label>
-            <p>Name: { name }</p>
+            <p>Name: { inputs.fullname }</p>
             <label>Marital Status: 
                 <select 
-                value={ selected } 
-                onChange={(e) => setOption(e.target.value)}>
+                name="maritalStatus"
+                value={ inputs.maritalStatus } 
+                onChange={ handleChange }>
                     <option value='Single'>Single</option>
                     <option value='Married'>Married</option>
                     <option value='Widow'>Widow</option>
@@ -46,10 +55,11 @@ function Login(){
             <br />
             <label>Write here: 
                 <textarea 
-                value={ message } 
-                onChange={ (e) => setMessage(e.target.value)} />
+                name="message"
+                value={ inputs.message } 
+                onChange={ handleChange } />
             </label>
-            <pre>Message: { message }</pre>
+            <pre>Message: { inputs.message }</pre>
             <input type='submit' />
         </form>
 
