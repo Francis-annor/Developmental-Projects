@@ -1,16 +1,18 @@
 // Import Modules
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react'
 // createRoot lets you create a root to display React components inside a browser DOM node.
 // import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
 import JesLordBadge from '/badge.png'
 
-// importing default export module. Note: When importing a default export module you don't need curly braces
+// Importing default export module. Note: When importing a default export module you don't need curly braces
 import { name, age } from './Components/personal.js'
-import Forms from './Components/Forms.jsx'
+// Suspense with lazy loading
+// Lazy Method: Using lazy to import the Form Component dynamically
+const FormModals = lazy(() => import('./Components/Forms.jsx'));
 import Message from './Components/message.jsx'
 import Keyboard from './Components/Keyboard.jsx'
-import Submit from './Components/MyButtons.jsx'
+const Submit = lazy(() => import('./Components/MyButtons.jsx'));
 import {Goal, Loading, Auth } from './Components/Authentication.jsx'
 
 // CSS import module
@@ -77,7 +79,11 @@ function App() {
       <Loading loaded={'Yes'} />
       <Auth isLogin={true} />
       <h1>Forms</h1>
-      <Forms />
+      {/* Suspense Compnent: The Suspense Component will display a loading message while it is loading. 
+      sing Suspense with lazy will delay even if the task is very fast. */}
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <FormModals />
+      </Suspense>
     </div>
   )
 }
