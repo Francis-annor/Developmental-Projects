@@ -7,10 +7,10 @@ export default function Submit(){
     }
     return(
         <div>
-            <button onClick={(event) => Specify('Form', event)} className={buttonStyles.myButton}>Submit</button>
+            <button onClick={(event) => Specify('Submit', event)} className={buttonStyles.myButton}>Submit</button>
             {/* CSS Multiple classes
             To demostrate the changes, we need to have two buttons, with two classes each: */}
-            <button onClick={(event) => Specify('Submit', event)} className={`${buttonStyles.myButton} ${buttonStyles.primary}`}>Send</button>
+            <button onClick={(event) => Specify('Send', event)} className={`${buttonStyles.myButton} ${buttonStyles.primary}`}>Send</button>
             <button onClick={(event) => Specify('Edit', event)} className={`${buttonStyles.myButton} ${buttonStyles.secondary}`}>Edit</button>
             {/* CSS Composes Classes
             CSS Modules allow you to combine classes using the composes keyword.

@@ -50,7 +50,7 @@ function LoginModal({isOpen, onClose}){
     }
 
     const formStyle = {
-        background: 'white',
+        background: 'dodgerblue',
         padding: '20px',
         borderRadius: '18px'
     }
