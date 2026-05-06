@@ -1,18 +1,19 @@
 // Import Modules
 import { Suspense, lazy, useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 // createRoot lets you create a root to display React components inside a browser DOM node.
 // import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
 import JesLordBadge from '/badge.png'
 // Importing default export module. Note: When importing a default export module you don't need curly braces
-import { name, age } from './Components/personal.js'
+import { name, age } from './components/personal.js'
 // Suspense with lazy loading
 // Lazy Method: Using lazy to import the Form Component dynamically
-const FormModals = lazy(() => import('./Components/Forms.jsx'));
-import Message from './Components/message.jsx'
-import Keys from './Components/Keyboard.jsx'
-const Submit = lazy(() => import('./Components/MyButtons.jsx'));
-import {Goal, Loading, Auth } from './Components/Authentication.jsx'
+const FormModals = lazy(() => import('./components/Forms.jsx'));
+import Message from './components/message.jsx'
+import Keys from './components/Keyboard.jsx'
+const Submit = lazy(() => import('./components/MyButtons.jsx'));
+import {Goal, Loading, Auth } from './components/Authentication.jsx'
 // CSS import module
 import './App.css'
 import { createGlobalStyle } from 'styled-components'
@@ -58,39 +59,41 @@ const GlobalStyle = createGlobalStyle`
 // Function Declaration
 function App() {
   return (
-    <>
-    <GlobalStyle />
-    <nav>
-      <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
-      <h1>JesLord Genius</h1>
-      <div>
-        <Time />
-        <Date />
-      </div>
-    </nav>
-    <main>
-      <div>
-        <h1>Hello World!</h1>
-        <Introduction />
-        <Message />
-        <Submit />
-        <Goal isGoal={true}/>
-        <Loading loaded={'Yes'} />
-        <Auth isLogin={false} />
-        <h1>Forms</h1>
-        {/* Suspense Compnent: The Suspense Component will display a loading message while it is loading. 
-        sing Suspense with lazy will delay even if the task is very fast. */}
-        <Suspense fallback={<h2>Loading...</h2>}>
-          <FormModals />
-        </Suspense>
-      </div>
-      <hr />
-      <div>
-        <Keys />
-      </div>
-    </main>
-    
-    </>
+    <BrowserRouter>
+      <>
+      <GlobalStyle />
+      <nav>
+        <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
+        <h1>JesLord Genius</h1>
+        <div>
+          <Time />
+          <Date />
+        </div>
+      </nav>
+      <main>
+        <div>
+          <h1>Hello World!</h1>
+          <Introduction />
+          <Message />
+          <Submit />
+          <Goal isGoal={true}/>
+          <Loading loaded={'Yes'} />
+          <Auth isLogin={false} />
+          <h1>Forms</h1>
+          {/* Suspense Compnent: The Suspense Component will display a loading message while it is loading. 
+          sing Suspense with lazy will delay even if the task is very fast. */}
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <FormModals />
+          </Suspense>
+        </div>
+        <hr />
+        <div>
+          <Keys />
+        </div>
+      </main>
+      
+      </>
+    </BrowserRouter>
   )
 }
 
