@@ -1,5 +1,5 @@
 export default function Contact(){
     return (
-        true
+        <h1>Contact Page</h1>
     )
 }

@@ -1,6 +1,16 @@
+/**
+ * App.jsx
+ * Main application entry point for the React Vite demo.
+ *
+ * This module sets up the browser router, global styling, lazy-loaded components,
+ * and helper components used in the main application layout.
+ */
+
 // Import Modules
 import { Suspense, lazy, useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Navigations from './router/Navigations.jsx'
+import Paths from './router/Paths.jsx'
 // createRoot lets you create a root to display React components inside a browser DOM node.
 // import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
@@ -35,7 +45,7 @@ const imgHeight = 100;
 
 // Using createGlobalStyle of CSS-in-JS as a typical CSS internal styling to structure the App declaration function
 const GlobalStyle = createGlobalStyle`
-  nav {
+  .nav-container {
     background-color: white;
     color: gray;
     border: 4px solid orange;
@@ -48,6 +58,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2.5em;
     color: orange;
   }
+  nav div:firstChild(){
+    display: block;
+  }
   main {
     display: flex;
   }
@@ -56,20 +69,28 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Function Declaration
+/**
+ * App component
+ *
+ * Uses BrowserRouter to wrap the main application UI, includes the navigation
+ * header, routes, lazy-loaded form content, and example components.
+ */
 function App() {
   return (
     <BrowserRouter>
-      <>
       <GlobalStyle />
-      <nav>
-        <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
+      <nav className='nav-container'>
+        <div>
+          <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
+          <Navigations />
+        </div>
         <h1>JesLord Genius</h1>
         <div>
           <Time />
           <Date />
         </div>
       </nav>
+      <Paths />
       <main>
         <div>
           <h1>Hello World!</h1>
@@ -91,8 +112,6 @@ function App() {
           <Keys />
         </div>
       </main>
-      
-      </>
     </BrowserRouter>
   )
 }
