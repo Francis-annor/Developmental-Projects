@@ -4,53 +4,18 @@ import { Suspense, lazy, useState } from 'react'
 // import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
 import JesLordBadge from '/badge.png'
-
 // Importing default export module. Note: When importing a default export module you don't need curly braces
 import { name, age } from './Components/personal.js'
 // Suspense with lazy loading
 // Lazy Method: Using lazy to import the Form Component dynamically
 const FormModals = lazy(() => import('./Components/Forms.jsx'));
 import Message from './Components/message.jsx'
-import Keyboard from './Components/Keyboard.jsx'
+import Keys from './Components/Keyboard.jsx'
 const Submit = lazy(() => import('./Components/MyButtons.jsx'));
 import {Goal, Loading, Auth } from './Components/Authentication.jsx'
-
 // CSS import module
 import './App.css'
-
-// Setting the width and height values for the image's width and height attributes
-const imgWidth = 100;
-const imgHeight = 100;
-
-// const navBar = (
-//   <nav>
-//     <img src={ JesLordLogo } height={imgHeight} width={imgWidth} />
-//   </nav>
-// )
-
-// const sideBar = (
-//   <div>Side Bar</div>
-// )
-
-// const footer = (
-//   <footer>#&copy; 2026</footer>
-// )
-
-// const myTable = (
-//   <div>
-//     <table>
-//       <tr>
-//         <th>Names</th>
-//       </tr>
-//       <tr>
-//         <td>John</td>
-//       </tr>
-//       <tr>
-//         <td>Elsa</td>
-//       </tr>
-//     </table>
-//   </div>
-// );
+import { createGlobalStyle } from 'styled-components'
 
 const Time = () =>{
   const time = new Date();
@@ -63,28 +28,69 @@ const Time = () =>{
   )
 }
 
+// Setting the width and height values for the image's width and height attributes
+const imgWidth = 100;
+const imgHeight = 100;
+
+// Using createGlobalStyle of CSS-in-JS as a typical CSS internal styling to structure the App declaration function
+const GlobalStyle = createGlobalStyle`
+  nav {
+    background-color: white;
+    color: gray;
+    border: 4px solid orange;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav h1 {
+    font-size: 2.5em;
+    color: orange;
+  }
+  main {
+    display: flex;
+  }
+  hr {
+    heigth: 100vh;
+  }
+`;
+
 // Function Declaration
 function App() {
   return (
-    <div>
-      <nav>
+    <>
+    <GlobalStyle />
+    <nav>
+      <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
+      <h1>JesLord Genius</h1>
+      <div>
         <Time />
-        <img src={ JesLordBadge } height={imgHeight} width={imgWidth} />
-      </nav>
-      <h1>Hello World!</h1>
-      <Introduction />
-      <Message />
-      <Submit />
-      <Goal isGoal={false}/>
-      <Loading loaded={'Yes'} />
-      <Auth isLogin={true} />
-      <h1>Forms</h1>
-      {/* Suspense Compnent: The Suspense Component will display a loading message while it is loading. 
-      sing Suspense with lazy will delay even if the task is very fast. */}
-      <Suspense fallback={<h2>Loading...</h2>}>
-        <FormModals />
-      </Suspense>
-    </div>
+        <Date />
+      </div>
+    </nav>
+    <main>
+      <div>
+        <h1>Hello World!</h1>
+        <Introduction />
+        <Message />
+        <Submit />
+        <Goal isGoal={true}/>
+        <Loading loaded={'Yes'} />
+        <Auth isLogin={false} />
+        <h1>Forms</h1>
+        {/* Suspense Compnent: The Suspense Component will display a loading message while it is loading. 
+        sing Suspense with lazy will delay even if the task is very fast. */}
+        <Suspense fallback={<h2>Loading...</h2>}>
+          <FormModals />
+        </Suspense>
+      </div>
+      <hr />
+      <div>
+        <Keys />
+      </div>
+    </main>
+    
+    </>
   )
 }
 
