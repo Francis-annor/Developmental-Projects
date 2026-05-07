@@ -11,6 +11,7 @@ import { Suspense, lazy, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Navigations from './router/Navigations.jsx'
 import Paths from './router/Paths.jsx'
+import Results from './components/SearchResults.jsx'
 // createRoot lets you create a root to display React components inside a browser DOM node.
 // import { createRoot } from 'react-dom/client'
 import JesLordLogo from '/logo.png'
@@ -90,6 +91,7 @@ function App() {
           <Date />
         </div>
       </nav>
+      <Results />
       <Paths />
       <main>
         <div>
