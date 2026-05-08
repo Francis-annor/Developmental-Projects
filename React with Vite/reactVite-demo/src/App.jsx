@@ -95,14 +95,12 @@ function App() {
       <Paths />
       <main>
         <div>
-          <h1>Hello World!</h1>
           <Introduction />
           <Message />
           <Submit />
           <Goal isGoal={true}/>
           <Loading loaded={'Yes'} />
           <Auth isLogin={false} />
-          <h1>Forms</h1>
           {/* Suspense Compnent: The Suspense Component will display a loading message while it is loading. 
           sing Suspense with lazy will delay even if the task is very fast. */}
           <Suspense fallback={<h2>Loading...</h2>}>
